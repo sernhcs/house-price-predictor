@@ -40,3 +40,5 @@ setuptools==65.5.0
 ipykernel==6.29.5
 
 
+#primero se instala un entorno virtual con uv 
+# uv venv --python python3.11

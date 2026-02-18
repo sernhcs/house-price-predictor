@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+
+  model:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: fastapi_api
+    ports:
+      - "8000:8000"
+    restart: always
+
+  streamlit:
+    build:
+      context: ./streamlit_app
+      dockerfile: Dockerfile
+    container_name: streamlit_app
+    ports:
+      - "8501:8501"
+    depends_on:
+      - model
+    restart: always
